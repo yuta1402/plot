@@ -32,6 +32,9 @@ def plot_data(filename, cmparam):
 with open('./settings.json', 'r') as setting_file:
     settings = json.load(setting_file)
 
+    if len(settings['datafiles']) <= 0:
+        exit()
+
     for n, f in enumerate(settings['datafiles']):
         plot_data(f, n / len(settings['datafiles']))
 
