@@ -22,7 +22,7 @@
 
   "grid": {
     "which": "major",
-    "color": "black",
+    "color": "grey",
     "linestyle": "--"
   },
 
