@@ -4,21 +4,26 @@
 下記は`settings.json`のテンプレートである。
 ```
 {
-    "datafiles": [
-    ],
+  "datafiles": [
+  ],
 
-    "xlabel": "",
-    "ylabel": "",
-    "xscale": "linear",
-    "yscale": "linear",
+  "xlabel": "",
+  "ylabel": "",
+  "xscale": "linear",
+  "yscale": "linear",
 
-    "grid": {
-        "which": "major",
-        "color": "black",
-        "linestyle": "--"
-    },
+  "xmin": null,
+  "xmax": null,
+  "ymin": null,
+  "ymax": null,
 
-    "savefig_name": ""
+  "grid": {
+    "which": "major",
+    "color": "black",
+    "linestyle": "--"
+  },
+
+  "savefig_name": ""
 }
 ```
 
