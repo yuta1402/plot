@@ -27,9 +27,10 @@
 ```
 {
     "datafiles": [
-        "data0.txt",
-        "data1.txt",
+        ["data0.txt", "label0"],
+        ["data1.txt", "label1"],
         ...
+        ["datan.txt", "labeln"]
     ],
 }
 ```
