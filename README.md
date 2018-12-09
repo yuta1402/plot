@@ -17,6 +17,9 @@
   "ymin": null,
   "ymax": null,
 
+  "xticks": null,
+  "yticks": null,
+
   "grid": {
     "which": "major",
     "color": "black",
@@ -37,6 +40,20 @@
         ...
         ["datan.txt", "labeln"]
     ],
+}
+```
+
+### ticks
+xticksは縦軸、yticksは横軸の刻み幅を決めるパラメータである。  
+以下に設定例を示す。
+```
+{
+  // x座標を、0.0から1.0まで0.1の刻み幅で表示
+  "xticks": {
+    "begin": 0.0,
+    "end"  : 1.1,
+    "step" : 0.1
+  }
 }
 ```
 

@@ -12,6 +12,9 @@
   "ymin": null,
   "ymax": null,
 
+  "xticks": null,
+  "yticks": null,
+
   "grid": {
     "which": "major",
     "color": "black",

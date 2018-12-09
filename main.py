@@ -66,6 +66,14 @@ with open('./settings.json', 'r') as setting_file:
     plt.xlim(xmin, xmax)
     plt.ylim(ymin, ymax)
 
+    if settings['xticks'] != None:
+        xts = settings['xticks']
+        plt.xticks(np.arange(xts['begin'], xts['end'], xts['step']))
+
+    if settings['yticks'] != None:
+        yts = settings['yticks']
+        plt.yticks(np.arange(yts['begin'], yts['end'], yts['step']))
+
     gsettings = settings['grid']
     plt.grid(which=gsettings['which'], color=gsettings['color'], linestyle=gsettings['linestyle'])
 
