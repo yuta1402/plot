@@ -35,10 +35,19 @@
 ```
 {
   "datafiles": [
-    ["data0.txt", "label0"],
-    ["data1.txt", "label1"],
+    {
+      "filename": "data0.txt",
+      "label": "label0"
+    },
+    {
+      "filename": "data1.txt",
+      "label": "label1"
+    },
     ...
-    ["datan.txt", "labeln"]
+    {
+      "filename": "datan.txt",
+      "label": "labeln"
+    }
   ],
 }
 ```

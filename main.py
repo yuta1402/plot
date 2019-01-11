@@ -9,7 +9,10 @@ data_xmax = -math.inf
 data_ymin = math.inf
 data_ymax = -math.inf
 
-def plot_data(filename, label):
+def plot_data(num, fileinfo):
+    # required parameters
+    filename = fileinfo["filename"]
+
     with open(filename, 'r') as input_file:
         lines = input_file.readlines()
 
@@ -21,7 +24,28 @@ def plot_data(filename, label):
             x.append(float(values[0]))
             y.append(float(values[1]))
 
-        plt.plot(x, y, linestyle='-', marker='o', label=label);
+        cmap = plt.get_cmap('tab10')
+
+        # default parameters
+        label = filename
+        color = cmap(num)
+        marker = 'o'
+        linestyle = '-'
+
+        # optional parameters
+        if 'label' in fileinfo:
+            label = fileinfo['label']
+
+        if 'color' in fileinfo:
+            color = fileinfo['color']
+
+        if 'marker' in fileinfo:
+            marker = fileinfo['marker']
+
+        if 'linestyle' in fileinfo:
+            linestyle = fileinfo['linestyle']
+
+        plt.plot(x, y, label=label, color=color, marker=marker, linestyle=linestyle);
 
         global data_xmin, data_xmax, data_ymin, data_ymax
         data_xmin = min([min(x), data_xmin])
@@ -36,10 +60,7 @@ with open('./settings.json', 'r') as setting_file:
         exit()
 
     for n, f in enumerate(settings['datafiles']):
-        filename = f[0]
-        label = f[1]
-
-        plot_data(filename, label)
+        plot_data(n, f)
 
     plt.xlabel(settings['xlabel'], fontsize=12)
     plt.ylabel(settings['ylabel'], fontsize=12)
